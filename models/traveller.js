@@ -20,7 +20,11 @@ Traveller.prototype.getJourneysByTransport = function (transport) {
   });
 };
 
-Traveller.prototype.getJourneysByMinDistance = function (minDistance) {};
+Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
+  return this.journeys.filter((journey) => {
+    return journey.distance > minDistance;
+  });
+};
 
 Traveller.prototype.calculateTotalDistanceTravelled = function () {
   return this.journeys.reduce((total, journey) => {
