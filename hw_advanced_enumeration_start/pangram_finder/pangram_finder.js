@@ -1,7 +1,10 @@
 const PangramFinder = function (phrase) {
   this.alphabet = "qwertyuiopasdfghjklzxcvbnm".split("");
   // lower case, remove space, turn to array
-  this.phrase = phrase.toLowerCase().replace(/\s/g, "").split("");
+  this.phrase = phrase
+    .toLowerCase()
+    .replace(/[^a-zA-Z]/g, "")
+    .split("");
 };
 
 PangramFinder.prototype.isPangram = function () {
